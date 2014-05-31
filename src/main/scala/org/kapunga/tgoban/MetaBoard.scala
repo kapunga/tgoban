@@ -66,7 +66,7 @@ class MetaBoard[T:ClassTag](size: Int, emptyValue: T) {
    * @param pos The position on the board we are checking.
    * @param validPoint A function mapping data we find at an intersection to
    *                   a Boolean specifying whether we want the coordinate returned.
-   * @return
+   * @return The Set of neighboring points that pass the validPoint function.
    */
   def getQualifiedNeighbors(pos: (Int, Int), validPoint: (T => Boolean)): Set[(Int, Int)] = {
     getNeighbors(pos).filter((neighbor: (Int, Int)) => validPoint(getPointValue(neighbor)))
