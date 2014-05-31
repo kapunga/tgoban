@@ -2,8 +2,6 @@ package org.kapunga.tgoban
 
 import org.kapunga.tgoban.BoardPoint.BoardPoint
 import org.kapunga.tgoban.BoardPoint.EMPTY
-import org.kapunga.tgoban.BoardPoint.BLACK
-import org.kapunga.tgoban.BoardPoint.WHITE
 
 /**
  * Created by kapunga on 5/28/14.
@@ -20,7 +18,7 @@ class GameBoard(size: Int) extends MetaBoard[BoardPoint](size, EMPTY) {
     return (0, EMPTY)
   }
 
-  def getAdjacentStones(pos: (Int, Int), color: BoardPoint) : List[(Int, Int)] = {
+  def getAdjacentStones(pos: (Int, Int), color: BoardPoint) : Set[(Int, Int)] = {
     getQualifiedNeighbors(pos, (point: BoardPoint) => point == color)
   }
 
