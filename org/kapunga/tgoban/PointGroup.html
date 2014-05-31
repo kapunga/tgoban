@@ -48,7 +48,7 @@
 It is up to the implementing classes to determine what exactly they
 could be.  It could be a tight group of connected stones for instance.
 A group should be associated with a board, otherwise the coordinates
-don't necessarily make any sense.</p><p>Created by kapunga on 5/31/14.
+don't necessarily make any sense.
 </p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
@@ -105,7 +105,8 @@ don't necessarily make any sense.</p><p>Created by kapunga on 5/31/14.
         <span class="name">getBoard</span><span class="params">()</span><span class="result">: <a href="MetaBoard.html" class="extype" name="org.kapunga.tgoban.MetaBoard">MetaBoard</a>[_]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>The MetaBoard this group is associated with.
+      <p class="shortcomment cmt">Used for accessing the board this group refers to.</p><div class="fullcomment"><div class="comment cmt"><p>Used for accessing the board this group refers to.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>The MetaBoard this group is associated with.
 </p></dd></dl></div>
     </li><li name="org.kapunga.tgoban.PointGroup#getMembers" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="getMembers():Set[(Int,Int)]"></a>
@@ -119,7 +120,9 @@ don't necessarily make any sense.</p><p>Created by kapunga on 5/31/14.
         <span class="name">getMembers</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Predef.Set">Set</span>[(<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>The member points in this group.
+      <p class="shortcomment cmt">Used for getting the members of the group, a Set of points on a board
+</p><div class="fullcomment"><div class="comment cmt"><p>Used for getting the members of the group, a Set of points on a board
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>The member points in this group.
 </p></dd></dl></div>
     </li><li name="org.kapunga.tgoban.PointGroup#validate" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="validate():Boolean"></a>
@@ -135,7 +138,8 @@ don't necessarily make any sense.</p><p>Created by kapunga on 5/31/14.
       </h4>
       <p class="shortcomment cmt">This method should be implemented to check the group for
 correctness.</p><div class="fullcomment"><div class="comment cmt"><p>This method should be implemented to check the group for
-correctness.</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>true if this group is valid, otherwise false.
+correctness.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>true if this group is valid, otherwise false.
 </p></dd></dl></div>
     </li></ol>
             </div>
