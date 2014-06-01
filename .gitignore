@@ -2,3 +2,4 @@
 .idea
 build
 tGoban.iml
+pushDocs.sh
