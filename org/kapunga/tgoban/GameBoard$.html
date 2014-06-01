@@ -2,9 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>MetaBoard - tGoban 0.0.1-SNAPSHOT API - org.kapunga.tgoban.MetaBoard</title>
-          <meta name="description" content="MetaBoard - tGoban 0.0.1 - SNAPSHOT API - org.kapunga.tgoban.MetaBoard" />
-          <meta name="keywords" content="MetaBoard tGoban 0.0.1 SNAPSHOT API org.kapunga.tgoban.MetaBoard" />
+          <title>GameBoard - tGoban 0.0.1-SNAPSHOT API - org.kapunga.tgoban.GameBoard</title>
+          <meta name="description" content="GameBoard - tGoban 0.0.1 - SNAPSHOT API - org.kapunga.tgoban.GameBoard" />
+          <meta name="keywords" content="GameBoard tGoban 0.0.1 SNAPSHOT API org.kapunga.tgoban.GameBoard" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -17,7 +17,7 @@
       <script type="text/javascript">
          if(top === self) {
             var url = '../../../index.html';
-            var hash = 'org.kapunga.tgoban.MetaBoard';
+            var hash = 'org.kapunga.tgoban.GameBoard$';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -27,34 +27,28 @@
    	  </script>
     
         </head>
-        <body class="type">
+        <body class="value">
       <div id="definition">
-        <img src="../../../lib/class_big.png" />
+        <a href="GameBoard.html" title="Go to companion"><img src="../../../lib/object_to_class_big.png" /></a>
         <p id="owner"><a href="../../package.html" class="extype" name="org">org</a>.<a href="../package.html" class="extype" name="org.kapunga">kapunga</a>.<a href="package.html" class="extype" name="org.kapunga.tgoban">tgoban</a></p>
-        <h1>MetaBoard</h1>
+        <h1><a href="GameBoard.html" title="Go to companion">GameBoard</a></h1>
       </div>
 
       <h4 id="signature" class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">class</span>
+        <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <span class="name">MetaBoard</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <span class="name">GameBoard</span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A MetaBoard is a base type for intersectional data on a Go board.  The data
-could be anything from a board position of an actual game, to a field mapping
-of black or white influence on the board.  This class provides basic access to
-points on the board and some simple methods for accessing neighbors, etc.
-</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>The type of data stored on this MetaBoard
-</p></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>This companion object to GameBoard is currently only used for generating boards with test positions on
+it for messing around in the REPL.
+</p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
-        </div><div class="toggleContainer block">
-          <span class="toggle">Known Subclasses</span>
-          <div class="subClasses hiddenContent"><a href="GameBoard.html" class="extype" name="org.kapunga.tgoban.GameBoard">GameBoard</a></div>
         </div></div>
         
 
@@ -72,7 +66,7 @@ points on the board and some simple methods for accessing neighbors, etc.
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="org.kapunga.tgoban.MetaBoard"><span>MetaBoard</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="org.kapunga.tgoban.GameBoard"><span>GameBoard</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -90,26 +84,7 @@ points on the board and some simple methods for accessing neighbors, etc.
 
       <div id="template">
         <div id="allMembers">
-        <div id="constructors" class="members">
-              <h3>Instance Constructors</h3>
-              <ol><li name="org.kapunga.tgoban.MetaBoard#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(size:Int,emptyValue:T)(implicitevidence$1:scala.reflect.ClassTag[T]):org.kapunga.tgoban.MetaBoard[T]"></a>
-      <a id="&lt;init&gt;:MetaBoard[T]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">new</span>
-      </span>
-      <span class="symbol">
-        <span class="name">MetaBoard</span><span class="params">(<span name="size">size: <span class="extype" name="scala.Int">Int</span></span>, <span name="emptyValue">emptyValue: <span class="extype" name="org.kapunga.tgoban.MetaBoard.T">T</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="org.kapunga.tgoban.MetaBoard.T">T</span>]</span>)</span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">size</dt><dd class="cmt"><p>The size of a board on the side, for example 19 in the case
-            of a standard 19 x 19 board.</p></dd><dt class="param">emptyValue</dt><dd class="cmt"><p>The value to initialize each point on the board with, for
-                  example and empty space in the case of a MetaBoard representing
-                  the game positions.</p></dd></dl></div>
-    </li></ol>
-            </div>
+        
 
         
 
@@ -195,19 +170,6 @@ points on the board and some simple methods for accessing neighbors, etc.
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="org.kapunga.tgoban.MetaBoard#boardData" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="boardData:Array[Array[T]]"></a>
-      <a id="boardData:Array[Array[T]]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">boardData</span><span class="result">: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Array">Array</span>[<span class="extype" name="org.kapunga.tgoban.MetaBoard.T">T</span>]]</span>
-      </span>
-      </h4>
-      
     </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a>
       <a id="clone():AnyRef"></a>
@@ -266,24 +228,6 @@ points on the board and some simple methods for accessing neighbors, etc.
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="org.kapunga.tgoban.MetaBoard#getBoardRepr" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="getBoardRepr(mapper:T=&gt;String):String"></a>
-      <a id="getBoardRepr((T)⇒String):String"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">getBoardRepr</span><span class="params">(<span name="mapper">mapper: (<span class="extype" name="org.kapunga.tgoban.MetaBoard.T">T</span>) ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Used to get a String representation of the data on this MetaBoard for human
-viewing.</p><div class="fullcomment"><div class="comment cmt"><p>Used to get a String representation of the data on this MetaBoard for human
-viewing.</p></div><dl class="paramcmts block"><dt class="param">mapper</dt><dd class="cmt"><p>A mapping function that takes point data from the board and maps it
-              to a string.</p></dd><dt>returns</dt><dd class="cmt"><p>A board shaped (hopefully, depending on the mapping function) string that
-        represents the data on this board.
-</p></dd></dl></div>
     </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <a id="getClass():Class[_]"></a>
@@ -297,91 +241,34 @@ viewing.</p></div><dl class="paramcmts block"><dt class="param">mapper</dt><dd c
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="org.kapunga.tgoban.MetaBoard#getConnectedPoints" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="getConnectedPoints(testPoints:Set[(Int,Int)],valid:T=&gt;Boolean):Set[(Int,Int)]"></a>
-      <a id="getConnectedPoints(Set[(Int,Int)],(T)⇒Boolean):Set[(Int,Int)]"></a>
+    </li><li name="org.kapunga.tgoban.GameBoard#getSmallTestBoard" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getSmallTestBoard():org.kapunga.tgoban.GameBoard"></a>
+      <a id="getSmallTestBoard():GameBoard"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getConnectedPoints</span><span class="params">(<span name="testPoints">testPoints: <span class="extype" name="scala.Predef.Set">Set</span>[(<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)]</span>, <span name="valid">valid: (<span class="extype" name="org.kapunga.tgoban.MetaBoard.T">T</span>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.Set">Set</span>[(<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)]</span>
+        <span class="name">getSmallTestBoard</span><span class="params">()</span><span class="result">: <a href="GameBoard.html" class="extype" name="org.kapunga.tgoban.GameBoard">GameBoard</a></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Gets a Set of points strongly connected (via adjacent spaces) to a Set of test points
-provided that match a certain test.</p><div class="fullcomment"><div class="comment cmt"><p>Gets a Set of points strongly connected (via adjacent spaces) to a Set of test points
-provided that match a certain test.  An example would be two Black points are handed to
-this method, and a set of stones is returned matching all of the stones in groups of which
-those two stones are a member.  This method first checks that the passed set of
-points in internally consistent with the test, then uses tail recursion to get the total set.
-This method will return an empty set if the input set of points do not all match the passed
-function for determining which points belong.
-</p></div><dl class="paramcmts block"><dt class="param">testPoints</dt><dd class="cmt"><p>The set of test points to find connected stones to.</p></dd><dt class="param">valid</dt><dd class="cmt"><p>A function for determining of a stone belongs in the list of connected stones.</p></dd><dt>returns</dt><dd class="cmt"><p>The inclusive set of points connected to &quot;testPoints&quot;, or the empty set if &quot;testPoints&quot;
-        is an invalid set according to the &quot;valid&quot; function.
+      <p class="shortcomment cmt">Gets a 9x9 test board.</p><div class="fullcomment"><div class="comment cmt"><p>Gets a 9x9 test board.</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>A 9x9 board with a few moves on it.
 </p></dd></dl></div>
-    </li><li name="org.kapunga.tgoban.MetaBoard#getNeighbors" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="getNeighbors(pnt:(Int,Int)):Set[(Int,Int)]"></a>
-      <a id="getNeighbors((Int,Int)):Set[(Int,Int)]"></a>
+    </li><li name="org.kapunga.tgoban.GameBoard#getTestBoard" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getTestBoard():org.kapunga.tgoban.GameBoard"></a>
+      <a id="getTestBoard():GameBoard"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getNeighbors</span><span class="params">(<span name="pnt">pnt: (<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)</span>)</span><span class="result">: <span class="extype" name="scala.Predef.Set">Set</span>[(<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)]</span>
+        <span class="name">getTestBoard</span><span class="params">()</span><span class="result">: <a href="GameBoard.html" class="extype" name="org.kapunga.tgoban.GameBoard">GameBoard</a></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Used to provide a Set of neighboring points to a given board position.</p><div class="fullcomment"><div class="comment cmt"><p>Used to provide a Set of neighboring points to a given board position.</p></div><dl class="paramcmts block"><dt class="param">pnt</dt><dd class="cmt"><p>The position on the board we are checking.</p></dd><dt>returns</dt><dd class="cmt"><p>The neighboring intersections on the board, or an empty set if
-        the provided coordinates are not on the board.
-</p></dd></dl></div>
-    </li><li name="org.kapunga.tgoban.MetaBoard#getPointValue" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="getPointValue(pnt:(Int,Int)):T"></a>
-      <a id="getPointValue((Int,Int)):T"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">getPointValue</span><span class="params">(<span name="pnt">pnt: (<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)</span>)</span><span class="result">: <span class="extype" name="org.kapunga.tgoban.MetaBoard.T">T</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Used for accessing the data stored at a given position on the MetaBoard.</p><div class="fullcomment"><div class="comment cmt"><p>Used for accessing the data stored at a given position on the MetaBoard.</p></div><dl class="paramcmts block"><dt class="param">pnt</dt><dd class="cmt"><p>A tuple specifying a coordinate on the board.</p></dd><dt>returns</dt><dd class="cmt"><p>The value of data on the board or the emptyValue in the constructor
-        if the provided coordinates are not on the board.
-</p></dd></dl></div>
-    </li><li name="org.kapunga.tgoban.MetaBoard#getQualifiedNeighbors" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="getQualifiedNeighbors(pnt:(Int,Int),validPoint:T=&gt;Boolean):Set[(Int,Int)]"></a>
-      <a id="getQualifiedNeighbors((Int,Int),(T)⇒Boolean):Set[(Int,Int)]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">getQualifiedNeighbors</span><span class="params">(<span name="pnt">pnt: (<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)</span>, <span name="validPoint">validPoint: (<span class="extype" name="org.kapunga.tgoban.MetaBoard.T">T</span>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.Set">Set</span>[(<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)]</span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Returns a Set of neighboring points to a given position that meet a certain
-criteria.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a Set of neighboring points to a given position that meet a certain
-criteria.</p></div><dl class="paramcmts block"><dt class="param">pnt</dt><dd class="cmt"><p>The position on the board we are checking.</p></dd><dt class="param">validPoint</dt><dd class="cmt"><p>A function mapping data we find at an intersection to
-                  a Boolean specifying whether we want the coordinate returned.</p></dd><dt>returns</dt><dd class="cmt"><p>The Set of neighboring points that pass the validPoint function.
-</p></dd></dl></div>
-    </li><li name="org.kapunga.tgoban.MetaBoard#getSize" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="getSize():Int"></a>
-      <a id="getSize():Int"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">getSize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Gets the size of the Go board.</p><div class="fullcomment"><div class="comment cmt"><p>Gets the size of the Go board.  Go boards are square, so a size of 19 corresponds
-to a 19x19 board.
-</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>The size of this board per side.
+      <p class="shortcomment cmt">Gets a full size test board.</p><div class="fullcomment"><div class="comment cmt"><p>Gets a full size test board.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>A 19x19 board with a few moves on it.
 </p></dd></dl></div>
     </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hashCode():Int"></a>
@@ -409,19 +296,6 @@ to a 19x19 board.
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="org.kapunga.tgoban.MetaBoard#isOnBoard" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="isOnBoard:((Int,Int))=&gt;Boolean"></a>
-      <a id="isOnBoard:((Int,Int))⇒Boolean"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">isOnBoard</span><span class="result">: ((<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>
-      </span>
-      </h4>
-      
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>

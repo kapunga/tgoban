@@ -29,9 +29,9 @@
         </head>
         <body class="type">
       <div id="definition">
-        <img src="../../../lib/class_big.png" />
+        <a href="GameBoard$.html" title="Go to companion"><img src="../../../lib/class_to_object_big.png" /></a>
         <p id="owner"><a href="../../package.html" class="extype" name="org">org</a>.<a href="../package.html" class="extype" name="org.kapunga">kapunga</a>.<a href="package.html" class="extype" name="org.kapunga.tgoban">tgoban</a></p>
-        <h1>GameBoard</h1>
+        <h1><a href="GameBoard$.html" title="Go to companion">GameBoard</a></h1>
       </div>
 
       <h4 id="signature" class="signature">
@@ -44,7 +44,10 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Created by kapunga on 5/28/14.
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A concrete representation of a game board.  The intersections represent three states,
+occupied by a black stone, a white stone, or unoccupied.  Has method for searching for
+basic things, such as counting liberties contained by a set of stones, finding connected
+stones or connected empty space, etc.
 </p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><a href="MetaBoard.html" class="extype" name="org.kapunga.tgoban.MetaBoard">MetaBoard</a>[<a href="BoardPoint$.html#BoardPoint=org.kapunga.tgoban.BoardPoint.Value" class="extmbr" name="org.kapunga.tgoban.BoardPoint.BoardPoint">BoardPoint.BoardPoint</a>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
@@ -85,7 +88,7 @@
         <div id="allMembers">
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
-              <ol><li name="org.kapunga.tgoban.GameBoard#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+              <ol><li name="org.kapunga.tgoban.GameBoard#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="&lt;init&gt;(size:Int):org.kapunga.tgoban.GameBoard"></a>
       <a id="&lt;init&gt;:GameBoard"></a>
       <h4 class="signature">
@@ -97,7 +100,8 @@
         <span class="name">GameBoard</span><span class="params">(<span name="size">size: <span class="extype" name="scala.Int">Int</span></span>)</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">size</dt><dd class="cmt"><p>The size of a board on the side, for example 19 in the case
+            of a standard 19 x 19 board.</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -198,19 +202,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MetaBoard.html" class="extype" name="org.kapunga.tgoban.MetaBoard">MetaBoard</a></dd></dl></div>
-    </li><li name="org.kapunga.tgoban.GameBoard#boardState" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="boardState():String"></a>
-      <a id="boardState():String"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">boardState</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
-      </span>
-      </h4>
-      
     </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a>
       <a id="clone():AnyRef"></a>
@@ -227,7 +218,7 @@
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="org.kapunga.tgoban.GameBoard#countLiberties" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="org.kapunga.tgoban.GameBoard#countLiberties" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="countLiberties(stones:Set[(Int,Int)]):Int"></a>
       <a id="countLiberties(Set[(Int,Int)]):Int"></a>
       <h4 class="signature">
@@ -239,7 +230,9 @@
         <span class="name">countLiberties</span><span class="params">(<span name="stones">stones: <span class="extype" name="scala.Predef.Set">Set</span>[(<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)]</span>)</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Counts the total number of liberties a group of stones has.</p><div class="fullcomment"><div class="comment cmt"><p>Counts the total number of liberties a group of stones has.  Does NOT look for more stones in the group</p></div><dl class="paramcmts block"><dt class="param">stones</dt><dd class="cmt"><p>The set of stones to count liberties for.</p></dd><dt>returns</dt><dd class="cmt"><p>The total number of unique liberties shared by the set of stones, or 0 if the set of
+        stones is empty, inconsistent, or made up of empty spaces.
+</p></dd></dl></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
@@ -282,7 +275,21 @@
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="org.kapunga.tgoban.GameBoard#getAdjacentStones" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="org.kapunga.tgoban.GameBoard#gamePosition" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="gamePosition():String"></a>
+      <a id="gamePosition():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">gamePosition</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Used for visualizing the game board.</p><div class="fullcomment"><div class="comment cmt"><p>Used for visualizing the game board.</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>A string representation of the current game state.
+</p></dd></dl></div>
+    </li><li name="org.kapunga.tgoban.GameBoard#getAdjacentStones" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getAdjacentStones(pnt:(Int,Int),color:org.kapunga.tgoban.BoardPoint.BoardPoint):Set[(Int,Int)]"></a>
       <a id="getAdjacentStones((Int,Int),BoardPoint.BoardPoint):Set[(Int,Int)]"></a>
       <h4 class="signature">
@@ -294,7 +301,10 @@
         <span class="name">getAdjacentStones</span><span class="params">(<span name="pnt">pnt: (<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)</span>, <span name="color">color: <a href="BoardPoint$.html#BoardPoint=org.kapunga.tgoban.BoardPoint.Value" class="extmbr" name="org.kapunga.tgoban.BoardPoint.BoardPoint">BoardPoint.BoardPoint</a></span>)</span><span class="result">: <span class="extype" name="scala.Predef.Set">Set</span>[(<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Used to get the list of points adjacent to a give point that are occupied
+by a stone of a given color (or no color)</p><div class="fullcomment"><div class="comment cmt"><p>Used to get the list of points adjacent to a give point that are occupied
+by a stone of a given color (or no color)</p></div><dl class="paramcmts block"><dt class="param">pnt</dt><dd class="cmt"><p>The point we are looking for adjacent stones from.</p></dd><dt class="param">color</dt><dd class="cmt"><p>The color of adjacent stones we are looking to match.</p></dd><dt>returns</dt><dd class="cmt"><p>A set of points adjacent to pnt of the given color
+</p></dd></dl></div>
     </li><li name="org.kapunga.tgoban.MetaBoard#getBoardRepr" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getBoardRepr(mapper:T=&gt;String):String"></a>
       <a id="getBoardRepr((BoardPoint.BoardPoint)⇒String):String"></a>
@@ -313,19 +323,6 @@ viewing.</p></div><dl class="paramcmts block"><dt class="param">mapper</dt><dd c
               to a string.</p></dd><dt>returns</dt><dd class="cmt"><p>A board shaped (hopefully, depending on the mapping function) string that
         represents the data on this board.
 </p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MetaBoard.html" class="extype" name="org.kapunga.tgoban.MetaBoard">MetaBoard</a></dd></dl></div>
-    </li><li name="org.kapunga.tgoban.GameBoard#getCapturesAfter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="getCapturesAfter(pnt:(Int,Int)):(Int,org.kapunga.tgoban.BoardPoint.BoardPoint)"></a>
-      <a id="getCapturesAfter((Int,Int)):(Int,BoardPoint.BoardPoint)"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">getCapturesAfter</span><span class="params">(<span name="pnt">pnt: (<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)</span>)</span><span class="result">: (<span class="extype" name="scala.Int">Int</span>, <a href="BoardPoint$.html#BoardPoint=org.kapunga.tgoban.BoardPoint.Value" class="extmbr" name="org.kapunga.tgoban.BoardPoint.BoardPoint">BoardPoint.BoardPoint</a>)</span>
-      </span>
-      </h4>
-      
     </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <a id="getClass():Class[_]"></a>
@@ -339,19 +336,47 @@ viewing.</p></div><dl class="paramcmts block"><dt class="param">mapper</dt><dd c
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="org.kapunga.tgoban.GameBoard#getConnectedStones" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="getConnectedStones(visited:Set[(Int,Int)],connected:Set[(Int,Int)]):Set[(Int,Int)]"></a>
-      <a id="getConnectedStones(Set[(Int,Int)],Set[(Int,Int)]):Set[(Int,Int)]"></a>
+    </li><li name="org.kapunga.tgoban.MetaBoard#getConnectedPoints" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getConnectedPoints(testPoints:Set[(Int,Int)],valid:T=&gt;Boolean):Set[(Int,Int)]"></a>
+      <a id="getConnectedPoints(Set[(Int,Int)],(BoardPoint.BoardPoint)⇒Boolean):Set[(Int,Int)]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getConnectedStones</span><span class="params">(<span name="visited">visited: <span class="extype" name="scala.Predef.Set">Set</span>[(<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)]</span>, <span name="connected">connected: <span class="extype" name="scala.Predef.Set">Set</span>[(<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)]</span>)</span><span class="result">: <span class="extype" name="scala.Predef.Set">Set</span>[(<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)]</span>
+        <span class="name">getConnectedPoints</span><span class="params">(<span name="testPoints">testPoints: <span class="extype" name="scala.Predef.Set">Set</span>[(<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)]</span>, <span name="valid">valid: (<a href="BoardPoint$.html#BoardPoint=org.kapunga.tgoban.BoardPoint.Value" class="extmbr" name="org.kapunga.tgoban.BoardPoint.BoardPoint">BoardPoint.BoardPoint</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.Set">Set</span>[(<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Gets a Set of points strongly connected (via adjacent spaces) to a Set of test points
+provided that match a certain test.</p><div class="fullcomment"><div class="comment cmt"><p>Gets a Set of points strongly connected (via adjacent spaces) to a Set of test points
+provided that match a certain test.  An example would be two Black points are handed to
+this method, and a set of stones is returned matching all of the stones in groups of which
+those two stones are a member.  This method first checks that the passed set of
+points in internally consistent with the test, then uses tail recursion to get the total set.
+This method will return an empty set if the input set of points do not all match the passed
+function for determining which points belong.
+</p></div><dl class="paramcmts block"><dt class="param">testPoints</dt><dd class="cmt"><p>The set of test points to find connected stones to.</p></dd><dt class="param">valid</dt><dd class="cmt"><p>A function for determining of a stone belongs in the list of connected stones.</p></dd><dt>returns</dt><dd class="cmt"><p>The inclusive set of points connected to &quot;testPoints&quot;, or the empty set if &quot;testPoints&quot;
+        is an invalid set according to the &quot;valid&quot; function.
+</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MetaBoard.html" class="extype" name="org.kapunga.tgoban.MetaBoard">MetaBoard</a></dd></dl></div>
+    </li><li name="org.kapunga.tgoban.GameBoard#getConnectedStones" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getConnectedStones(testPoints:Set[(Int,Int)]):Set[(Int,Int)]"></a>
+      <a id="getConnectedStones(Set[(Int,Int)]):Set[(Int,Int)]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getConnectedStones</span><span class="params">(<span name="testPoints">testPoints: <span class="extype" name="scala.Predef.Set">Set</span>[(<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)]</span>)</span><span class="result">: <span class="extype" name="scala.Predef.Set">Set</span>[(<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Gets a Set of connected points adjacent to the Set of test points.</p><div class="fullcomment"><div class="comment cmt"><p>Gets a Set of connected points adjacent to the Set of test points.  All of the test points must be the same
+color or all be empty and the resultant set will match the state of the test points.  Used to find strongly
+connected groups of stones or liberties.
+</p></div><dl class="paramcmts block"><dt class="param">testPoints</dt><dd class="cmt"><p>The set of test points to check.</p></dd><dt>returns</dt><dd class="cmt"><p>A set of points connected to the test points, or an empty set if the set of test points is either
+        empty or inconsistent.
+</p></dd></dl></div>
     </li><li name="org.kapunga.tgoban.MetaBoard#getNeighbors" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getNeighbors(pnt:(Int,Int)):Set[(Int,Int)]"></a>
       <a id="getNeighbors((Int,Int)):Set[(Int,Int)]"></a>
@@ -379,7 +404,7 @@ viewing.</p></div><dl class="paramcmts block"><dt class="param">mapper</dt><dd c
         <span class="name">getPointValue</span><span class="params">(<span name="pnt">pnt: (<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)</span>)</span><span class="result">: <a href="BoardPoint$.html#BoardPoint=org.kapunga.tgoban.BoardPoint.Value" class="extmbr" name="org.kapunga.tgoban.BoardPoint.BoardPoint">BoardPoint.BoardPoint</a></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Used for accessing the data stored at a given position on the MetaBoard</p><div class="fullcomment"><div class="comment cmt"><p>Used for accessing the data stored at a given position on the MetaBoard</p></div><dl class="paramcmts block"><dt class="param">pnt</dt><dd class="cmt"><p>A tuple specifying a coordinate on the board.</p></dd><dt>returns</dt><dd class="cmt"><p>The value of data on the board or the emptyValue in the constructor
+      <p class="shortcomment cmt">Used for accessing the data stored at a given position on the MetaBoard.</p><div class="fullcomment"><div class="comment cmt"><p>Used for accessing the data stored at a given position on the MetaBoard.</p></div><dl class="paramcmts block"><dt class="param">pnt</dt><dd class="cmt"><p>A tuple specifying a coordinate on the board.</p></dd><dt>returns</dt><dd class="cmt"><p>The value of data on the board or the emptyValue in the constructor
         if the provided coordinates are not on the board.
 </p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MetaBoard.html" class="extype" name="org.kapunga.tgoban.MetaBoard">MetaBoard</a></dd></dl></div>
     </li><li name="org.kapunga.tgoban.MetaBoard#getQualifiedNeighbors" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -411,7 +436,9 @@ criteria.</p></div><dl class="paramcmts block"><dt class="param">pnt</dt><dd cla
         <span class="name">getSize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>The size of this board per side.
+      <p class="shortcomment cmt">Gets the size of the Go board.</p><div class="fullcomment"><div class="comment cmt"><p>Gets the size of the Go board.  Go boards are square, so a size of 19 corresponds
+to a 19x19 board.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>The size of this board per side.
 </p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MetaBoard.html" class="extype" name="org.kapunga.tgoban.MetaBoard">MetaBoard</a></dd></dl></div>
     </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hashCode():Int"></a>
@@ -439,7 +466,7 @@ criteria.</p></div><dl class="paramcmts block"><dt class="param">pnt</dt><dd cla
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="org.kapunga.tgoban.GameBoard#isLegalMove" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="org.kapunga.tgoban.GameBoard#isLegalMove" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isLegalMove(pnt:(Int,Int),color:org.kapunga.tgoban.BoardPoint.BoardPoint):Boolean"></a>
       <a id="isLegalMove((Int,Int),BoardPoint.BoardPoint):Boolean"></a>
       <h4 class="signature">
@@ -451,7 +478,11 @@ criteria.</p></div><dl class="paramcmts block"><dt class="param">pnt</dt><dd cla
         <span class="name">isLegalMove</span><span class="params">(<span name="pnt">pnt: (<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)</span>, <span name="color">color: <a href="BoardPoint$.html#BoardPoint=org.kapunga.tgoban.BoardPoint.Value" class="extmbr" name="org.kapunga.tgoban.BoardPoint.BoardPoint">BoardPoint.BoardPoint</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Used to determine if placing a given stone on an intersection would result in a legal
+state NOT accounting for ko.</p><div class="fullcomment"><div class="comment cmt"><p>Used to determine if placing a given stone on an intersection would result in a legal
+state NOT accounting for ko.  Placing empty spaces is always valid.  Placing a stone
+on top of another stone is not valid.</p></div><dl class="paramcmts block"><dt class="param">pnt</dt><dd class="cmt"><p>The point we are checking the validity for.</p></dd><dt class="param">color</dt><dd class="cmt"><p>The color we are checking the validity for.</p></dd><dt>returns</dt><dd class="cmt"><p>true if the move would be valid, otherwise false.
+</p></dd></dl></div>
     </li><li name="org.kapunga.tgoban.MetaBoard#isOnBoard" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isOnBoard:((Int,Int))=&gt;Boolean"></a>
       <a id="isOnBoard:((Int,Int))⇒Boolean"></a>
@@ -504,7 +535,7 @@ criteria.</p></div><dl class="paramcmts block"><dt class="param">pnt</dt><dd cla
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="org.kapunga.tgoban.GameBoard#placeStone" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="org.kapunga.tgoban.GameBoard#placeStone" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="placeStone(pnt:(Int,Int),color:org.kapunga.tgoban.BoardPoint.BoardPoint):(Int,org.kapunga.tgoban.BoardPoint.BoardPoint)"></a>
       <a id="placeStone((Int,Int),BoardPoint.BoardPoint):(Int,BoardPoint.BoardPoint)"></a>
       <h4 class="signature">
@@ -516,7 +547,9 @@ criteria.</p></div><dl class="paramcmts block"><dt class="param">pnt</dt><dd cla
         <span class="name">placeStone</span><span class="params">(<span name="pnt">pnt: (<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)</span>, <span name="color">color: <a href="BoardPoint$.html#BoardPoint=org.kapunga.tgoban.BoardPoint.Value" class="extmbr" name="org.kapunga.tgoban.BoardPoint.BoardPoint">BoardPoint.BoardPoint</a></span>)</span><span class="result">: (<span class="extype" name="scala.Int">Int</span>, <a href="BoardPoint$.html#BoardPoint=org.kapunga.tgoban.BoardPoint.Value" class="extmbr" name="org.kapunga.tgoban.BoardPoint.BoardPoint">BoardPoint.BoardPoint</a>)</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Places a (or removes) a stone on the board representation and returns a list of prisoners.</p><div class="fullcomment"><div class="comment cmt"><p>Places a (or removes) a stone on the board representation and returns a list of prisoners.
+This occurs only if the move is valid.</p></div><dl class="paramcmts block"><dt class="param">pnt</dt><dd class="cmt"><p>The point where we are placing the stone.</p></dd><dt class="param">color</dt><dd class="cmt"><p>The color of the stone we are placing.</p></dd><dt>returns</dt><dd class="cmt"><p>A tuple representing the number and type of prisoners removed from the baord if any.
+</p></dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>

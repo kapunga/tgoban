@@ -44,7 +44,9 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A board representation enumeration.  Has representations for
+Black, white, and empty.
+</p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.Enumeration">Enumeration</span>, <span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
@@ -404,7 +406,7 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="org.kapunga.tgoban.BoardPoint#getIntersectionString" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="org.kapunga.tgoban.BoardPoint#getIntersectionString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getIntersectionString(point:org.kapunga.tgoban.BoardPoint.BoardPoint):String"></a>
       <a id="getIntersectionString(BoardPoint):String"></a>
       <h4 class="signature">
@@ -416,7 +418,10 @@
         <span class="name">getIntersectionString</span><span class="params">(<span name="point">point: <a href="#BoardPoint=org.kapunga.tgoban.BoardPoint.Value" class="extmbr" name="org.kapunga.tgoban.BoardPoint.BoardPoint">BoardPoint</a></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">A mapping of enumeration value to string for outputting the visual representation
+of the board.</p><div class="fullcomment"><div class="comment cmt"><p>A mapping of enumeration value to string for outputting the visual representation
+of the board.</p></div><dl class="paramcmts block"><dt class="param">point</dt><dd class="cmt"><p>The value of enumeration</p></dd><dt>returns</dt><dd class="cmt"><p>The visual string representation
+</p></dd></dl></div>
     </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hashCode():Int"></a>
       <a id="hashCode():Int"></a>
@@ -521,6 +526,21 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="org.kapunga.tgoban.BoardPoint#opposite" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="opposite(point:org.kapunga.tgoban.BoardPoint.BoardPoint):org.kapunga.tgoban.BoardPoint.BoardPoint"></a>
+      <a id="opposite(BoardPoint):BoardPoint"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">opposite</span><span class="params">(<span name="point">point: <a href="#BoardPoint=org.kapunga.tgoban.BoardPoint.Value" class="extmbr" name="org.kapunga.tgoban.BoardPoint.BoardPoint">BoardPoint</a></span>)</span><span class="result">: <a href="#BoardPoint=org.kapunga.tgoban.BoardPoint.Value" class="extmbr" name="org.kapunga.tgoban.BoardPoint.BoardPoint">BoardPoint</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Returns the opposite fo a given point type.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the opposite fo a given point type.</p></div><dl class="paramcmts block"><dt class="param">point</dt><dd class="cmt"><p>The point type being checked.</p></dd><dt>returns</dt><dd class="cmt"><p>BLACK if the point is WHITE, WHITE if the point is BLACK
+        and EMPTY if the point is EMPTY.
+</p></dd></dl></div>
     </li><li name="scala.Enumeration#readResolve" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="readResolve():AnyRef"></a>
       <a id="readResolve():AnyRef"></a>
