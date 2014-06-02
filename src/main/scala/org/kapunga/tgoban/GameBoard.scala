@@ -1,6 +1,7 @@
 package org.kapunga.tgoban
 
 import org.kapunga.tgoban.TgobanTypes.Banten
+import org.kapunga.tgoban.BoardPoint.Agehama
 import org.kapunga.tgoban.BoardPoint.BoardPoint
 import org.kapunga.tgoban.BoardPoint.EMPTY
 import org.kapunga.tgoban.BoardPoint.BLACK
@@ -62,7 +63,7 @@ class GameBoard(size: Int) extends MetaBoard[BoardPoint](size, EMPTY) {
 
     for (stone <- stones) emptySpaces = emptySpaces ++ getAdjacentStones(stone, EMPTY)
 
-    return emptySpaces.size
+    emptySpaces.size
   }
 
   /**
@@ -93,7 +94,7 @@ class GameBoard(size: Int) extends MetaBoard[BoardPoint](size, EMPTY) {
     if (countLiberties(getConnectedStones(getAdjacentStones(pnt, BoardPoint.opposite(color)))) == 1) return true
 
     // If it hasn't been deemed legal by now, it is not.
-    return false
+    false
   }
 
   /**
@@ -103,12 +104,29 @@ class GameBoard(size: Int) extends MetaBoard[BoardPoint](size, EMPTY) {
    * @param color The color of the stone we are placing.
    * @return A tuple representing the number and type of prisoners removed from the baord if any.
    */
-  // TODO change the return type to an aliased prisoner set.
-  def placeStone(pnt: Banten, color: BoardPoint): (Int, BoardPoint) = {
+  def placeStone(pnt: Banten, color: BoardPoint): Agehama = {
+    def getCaptures(pnt: Banten): Agehama = {
+      var capturedStones: Set[Banten] = Set()
+
+      val testSet: Set[Banten] = getAdjacentStones(pnt, BoardPoint.opposite(getPointValue(pnt)))
+
+      testSet.foreach((f: Banten) => {
+        val connected: Set[Banten] = getConnectedStones(Set(f))
+
+        if (countLiberties(getConnectedStones(connected)) == 0) capturedStones = capturedStones ++ connected
+      })
+
+      capturedStones.foreach((p: Banten) => boardData(p._1)(p._2) = EMPTY)
+
+      (capturedStones.size, BoardPoint.opposite(getPointValue(pnt)))
+    }
+
     if (isLegalMove(pnt, color)) {
       boardData(pnt._1)(pnt._2) = color
+      return getCaptures(pnt)
     }
-    return (0, EMPTY)
+
+    (0, EMPTY)
   }
 
   /**
@@ -130,7 +148,7 @@ object GameBoard {
    *
    * @return A 19x19 board with a few moves on it.
    */
-  def getTestBoard(): GameBoard = {
+  def getTestBoard: GameBoard = {
     val gameBoard = new GameBoard(19)
 
     gameBoard.placeStone((2, 3), BLACK)
@@ -145,14 +163,14 @@ object GameBoard {
     gameBoard.placeStone((5, 16), WHITE)
     gameBoard.placeStone((3, 9), BLACK)
 
-    return gameBoard
+    gameBoard
   }
 
   /**
    * Gets a 9x9 test board.
    * @return A 9x9 board with a few moves on it.
    */
-  def getSmallTestBoard(): GameBoard = {
+  def getSmallTestBoard: GameBoard = {
     val gameBoard = new GameBoard(9)
 
     gameBoard.placeStone((0, 1), WHITE)
@@ -164,7 +182,7 @@ object GameBoard {
     gameBoard.placeStone((2, 1), BLACK)
     gameBoard.placeStone((2, 3), BLACK)
 
-    return gameBoard
+    gameBoard
   }
 }
 
@@ -176,6 +194,7 @@ object GameBoard {
 object BoardPoint extends Enumeration {
   type BoardPoint = Value
   val EMPTY, BLACK, WHITE = Value
+  type Agehama = (Int, BoardPoint)
 
   /**
    * A mapping of enumeration value to string for outputting the visual representation
@@ -184,9 +203,9 @@ object BoardPoint extends Enumeration {
    * @return The visual string representation
    */
   def getIntersectionString(point: BoardPoint): String = {
-    if (point == EMPTY) return ". "
-    else if (point == BLACK) return "* "
-    else  return "o "
+    if (point == EMPTY) ". "
+    else if (point == BLACK) "* "
+    else "o "
   }
 
   /**
@@ -196,8 +215,8 @@ object BoardPoint extends Enumeration {
    *         and EMPTY if the point is EMPTY.
    */
   def opposite(point: BoardPoint): BoardPoint = {
-    if (point == EMPTY) return EMPTY
-    else if (point == BLACK) return WHITE
-    else return BLACK
+    if (point == EMPTY) EMPTY
+    else if (point == BLACK) WHITE
+    else BLACK
   }
 }

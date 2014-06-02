@@ -15,14 +15,14 @@ trait PointGroup {
    *
    * @return The member points in this group.
    */
-  def getMembers(): Set[(Int, Int)];
+  def getMembers: Set[(Int, Int)]
 
   /**
    * Used for accessing the board this group refers to.
    *
    * @return The MetaBoard this group is associated with.
    */
-  def getBoard(): MetaBoard[_];
+  def getBoard: MetaBoard[_]
 
   /**
    * This method should be implemented to check the group for
@@ -30,5 +30,5 @@ trait PointGroup {
    *
    * @return true if this group is valid, otherwise false.
    */
-  def validate(): Boolean;
+  def validate: Boolean
 }

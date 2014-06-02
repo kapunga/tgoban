@@ -31,7 +31,7 @@ class MetaBoard[T:ClassTag](size: Int, emptyValue: T) {
    *
    * @return The size of this board per side.
    */
-  def getSize(): Int = { size }
+  def getSize: Int = { size }
 
   /**
    * Used for accessing the data stored at a given position on the MetaBoard.
@@ -41,9 +41,9 @@ class MetaBoard[T:ClassTag](size: Int, emptyValue: T) {
    */
   def getPointValue(pnt: Banten): T = {
     if (isOnBoard(pnt)) {
-      return boardData(pnt._1)(pnt._2)
+      boardData(pnt._1)(pnt._2)
     } else {
-      return emptyValue
+      emptyValue
     }
   }
 
@@ -62,7 +62,7 @@ class MetaBoard[T:ClassTag](size: Int, emptyValue: T) {
     val neighbors: Set[Banten] = Set((pnt._1 + 1, pnt._2),
                                     (pnt._1 - 1, pnt._2),
                                     (pnt._1, pnt._2 + 1),
-                                    (pnt._1, pnt._2 - 1));
+                                    (pnt._1, pnt._2 - 1))
     neighbors.filter(isOnBoard)
   }
 
@@ -125,6 +125,6 @@ class MetaBoard[T:ClassTag](size: Int, emptyValue: T) {
       boardString += "\n"
     }
 
-    return boardString
+    boardString
   }
 }
