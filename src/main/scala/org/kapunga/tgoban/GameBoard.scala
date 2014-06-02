@@ -38,6 +38,8 @@ class GameBoard(size: Int) extends MetaBoard[BoardPoint](size, EMPTY) {
    *         empty or inconsistent.
    */
   def getConnectedStones(testPoints: Set[Banten]): Set[Banten] = {
+    if (testPoints.size == 0) return Set()
+
     val color: BoardPoint = getPointValue(testPoints.head)
 
     getConnectedPoints(testPoints, (point: BoardPoint) => point == color)
@@ -51,8 +53,8 @@ class GameBoard(size: Int) extends MetaBoard[BoardPoint](size, EMPTY) {
    */
   def countLiberties(stones: Set[Banten]): Int = {
     // TODO Maybe make this just check one stone and find the connected groups?
-    if (!stones.forall((p: Banten) => getPointValue(p) != EMPTY
-                                      && getPointValue(p) != getPointValue(stones.head))) {
+    if (!stones.forall((pnt: Banten) => getPointValue(pnt) != EMPTY
+                                        && getPointValue(pnt) == getPointValue(stones.head))) {
       return 0
     }
 

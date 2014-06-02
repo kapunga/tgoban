@@ -96,7 +96,7 @@ class MetaBoard[T:ClassTag](size: Int, emptyValue: T) {
     if (!testPoints.forall((p: Banten) => valid(getPointValue(p)))) return Set()
 
     def recurseConnectedPoints(visited: Set[Banten], connected: Set[Banten], valid: (T => Boolean)): Set[Banten] = {
-      if (visited == connected) return connected
+      if (testPoints.diff(visited).size == 0) return connected
 
       val nextPoint = testPoints.diff(visited).head
 
