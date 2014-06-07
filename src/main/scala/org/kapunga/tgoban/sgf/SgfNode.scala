@@ -14,6 +14,12 @@ class SgfNode(p: SgfNode = null) {
 
   if (parent != null) parent.addChild(this)
 
+  def SgfNode(size: Int) {
+    propMap = propMap + ("FF" -> 4)
+    propMap = propMap + ("GM" -> 1)
+    propMap = propMap + ("SZ" -> size)
+  }
+
   def addChild(child: SgfNode): Unit = {
     children = child :: children
     child.parent = this

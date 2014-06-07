@@ -1,5 +1,6 @@
 package org.kapunga.tgoban.sgf
 
+import scala.io.Source
 import scala.language.postfixOps
 import scala.util.parsing.combinator.JavaTokenParsers
 
@@ -42,47 +43,95 @@ class SgfParser extends JavaTokenParsers {
   def stringVal = "[" ~> "[^(\\[\\])]+".r <~ "]"
   def stringProp: Parser[(String, String)] = stringProps.r ~ stringVal ^^ { case key ~ value => (key, value) }
 
-  def movePart = moveProp | placeProp | intProp | floatProp | stringProp
+  def moveProperty = moveProp | placeProp | intProp | floatProp | stringProp
 
-  def moveParts = movePart*
+  /**
+   * A move property list parser
+   */
+  def moveProperties = moveProperty*
 
-  def move: Parser[SgfNode] = ";" ~> moveParts ^^ buildNode
+  /**
+   * A move parser
+   * move ::== ";" { moveProperty }
+   */
+  def move: Parser[SgfNode] = ";" ~> moveProperties ^^ buildNode
+
+  /**
+   * A branch parser
+   * branch ::== "(" { move | branch } ")"
+   */
 
   def branch: Parser[List[SgfNode]] = "(" ~> rep(move | branch) <~ ")" ^^ buildBranch
 
+  /**
+   * A game parser
+   * game ::== "(" move { move | branch } ")"
+   */
   def game: Parser[SgfNode] =  "(" ~> move ~ rep(move | branch) <~ ")" ^^ { case head ~ body => buildGame(head, body) }
 
+  /**
+   * Builds a coordinate pair from a pair of characters. These characters are reversed so that the visual
+   * matches correctly.
+   *
+   * @return A coordinate pair.
+   */
   def parseCoord: (String => (Int, Int)) = (coord: String) => {
     val offset = 'a'.asInstanceOf[Int]
     (coord.charAt(1).asInstanceOf[Int] - offset,
       coord.charAt(0).asInstanceOf[Int] - offset)
   }
 
+  /**
+   * Builds a node.
+   * @return The node being built.
+   */
   def buildNode: ((List[(String, Any)]) => SgfNode) = (propList: List[(String, Any)]) => {
     val node: SgfNode = new SgfNode()
     propList.foreach((item: (String, Any)) => node.propMap = node.propMap + (item._1 -> item._2))
     node
   }
 
+  /**
+   * Builds a branch.
+   * @return The head node of the branch.
+   */
   def buildBranch: (List[Object] => List[SgfNode]) = (nodeList: List[Object]) => {
     var head: SgfNode = new SgfNode()
     var tail: SgfNode = head
 
     nodeList.foreach((node) => {
-      if (node.isInstanceOf[SgfNode]) {
-        tail.addChild(node.asInstanceOf[SgfNode])
-        tail = node.asInstanceOf[SgfNode]
-      } else if (node.isInstanceOf[List[SgfNode]]) {
-        node.asInstanceOf[List[SgfNode]].foreach((item: SgfNode) => tail.addChild(item))
+      node match {
+        case child: SgfNode =>
+          tail.addChild(child)
+          tail = child
+        case nodes: List[SgfNode] =>
+          nodes.foreach((item: SgfNode) => tail.addChild(item))
+        case _ =>
       }
     })
 
     head.children
   }
 
+  /**
+   * Builds a game.
+   *
+   * @return The head node of the game.
+   */
   def buildGame: ((SgfNode, List[Object]) => SgfNode) = (head: SgfNode, list: List[Object]) => {
     head.children = buildBranch(list)
 
     head
+  }
+}
+
+object SgfParser {
+  def parseSgfFile(fileName: String): SgfNode = {
+    val parser: SgfParser = new SgfParser()
+
+    val result = parser.parseAll(parser.game, Source.fromFile(fileName).reader)
+
+    if (result.isEmpty) return new SgfNode()
+    else return result.get
   }
 }
