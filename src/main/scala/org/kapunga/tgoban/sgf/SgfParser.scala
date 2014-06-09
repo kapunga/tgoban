@@ -26,8 +26,7 @@ class SgfParser extends JavaTokenParsers {
   def intProps: String = "(FF|GM|SZ|HA|TM)"
 
   def intVal = "[" ~> wholeNumber <~ "]"
-  def intProp: Parser[(String, Int)] = intProps.r ~ intVal ^^ { case key ~ value =>
-    (key, value.toInt) }
+  def intProp: Parser[(String, Int)] = intProps.r ~ intVal ^^ { case key ~ value => (key, value.toInt) }
 
   // A list that denotes a floating point property like komi
   def floatProps: String = "(KM)"
