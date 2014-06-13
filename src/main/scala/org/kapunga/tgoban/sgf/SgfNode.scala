@@ -29,4 +29,13 @@ class SgfNode(p: SgfNode = null) {
   def setParent(p:SgfNode): Unit = { parent = p }
 
   def getParent: SgfNode = { parent }
+
+  def isEmpty: Boolean = { children.size == 0 }
+}
+
+object SgfNode {
+  def isNodeInChildTree(root: SgfNode, searchNode: SgfNode): Boolean = {
+    if (root.isEmpty) return false
+    true
+  }
 }
