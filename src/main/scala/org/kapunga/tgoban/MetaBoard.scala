@@ -1,7 +1,5 @@
 package org.kapunga.tgoban
 
-import org.kapunga.tgoban.TgobanTypes.Banten
-
 import scala.reflect.ClassTag
 
 /**
@@ -23,7 +21,7 @@ class MetaBoard[T:ClassTag](size: Int, emptyValue: T) {
   // Board data, pre-filled with a default value
   val boardData: Array[Array[T]] = Array.fill[T](size, size) { emptyValue }
   // A simple filter to determine if a position is on the board.
-  val isOnBoard = (pnt: Banten) => pnt._1 >= 0 && pnt._1 < size && pnt._2 >= 0 && pnt._2 < size
+  val isOnBoard = (pnt: Banten) => pnt.x >= 0 && pnt.x < size && pnt.y >= 0 && pnt.y < size
 
   /**
    * Gets the size of the Go board.  Go boards are square, so a size of 19 corresponds
@@ -41,7 +39,7 @@ class MetaBoard[T:ClassTag](size: Int, emptyValue: T) {
    */
   def getPointValue(pnt: Banten): T = {
     if (isOnBoard(pnt)) {
-      boardData(pnt._1)(pnt._2)
+      boardData(pnt.x)(pnt.y)
     } else {
       emptyValue
     }
@@ -59,10 +57,10 @@ class MetaBoard[T:ClassTag](size: Int, emptyValue: T) {
       return Set()
     }
     // Default list of neighbors, filter out those that are not on the board.
-    val neighbors: Set[Banten] = Set((pnt._1 + 1, pnt._2),
-                                    (pnt._1 - 1, pnt._2),
-                                    (pnt._1, pnt._2 + 1),
-                                    (pnt._1, pnt._2 - 1))
+    val neighbors: Set[Banten] = Set((pnt.x + 1, pnt.y),
+                                    (pnt.x - 1, pnt.y),
+                                    (pnt.x, pnt.y + 1),
+                                    (pnt.x, pnt.y - 1))
     neighbors.filter(isOnBoard)
   }
 
