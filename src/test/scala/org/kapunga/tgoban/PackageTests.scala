@@ -26,4 +26,11 @@ class PackageTests {
     assertEquals("WHITE opposite is incorrect", BLACK, white.opp)
     assertEquals("EMPTY opposite is incorrect", EMPTY, empty.opp)
   }
+
+  @Test
+  def testBoardPointRepr() = {
+    assertEquals("BLACK representation is incorrect", "* ", BLACK.repr)
+    assertEquals("WHITE representation is incorrect", "o ", WHITE.repr)
+    assertEquals("EMPTY representation is incorrect", ". ", EMPTY.repr)
+  }
 }
