@@ -1,10 +1,15 @@
 package org.kapunga.tgoban
 
-import org.kapunga.tgoban.sgf.SgfNode
 
 /**
  * Created by kapunga on 6/7/14.
  */
-class Game(gameHead: SgfNode = new SgfNode()) {
+class Game(size: Int, handicap: Int, komi: Float) {
 
 }
+
+abstract class Move
+case class Handicap(num: Int) extends Move
+case class White()
+
+
