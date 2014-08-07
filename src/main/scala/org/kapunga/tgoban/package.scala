@@ -30,6 +30,11 @@ package object tgoban {
    */
   implicit def bantenToCoords(banten: Banten): BantenCoords = new BantenCoords(banten)
 
+  object BoardSize extends Enumeration {
+    type BoardSize = Value
+    val STANDARD, MEDIUM, SMALL = Value
+  }
+
   /**
    * An enumeration that represents
    */
